@@ -1,0 +1,74 @@
+<!-- Update Modal example -->
+<div
+  class="modal fade edit-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="mySmallModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="card shadow-none border-0 p-3 pb-0">
+        <div class="card-title">
+          <h4>Update Order</h4>
+        </div>
+        <div class="card-body" *ngIf="updateForm">
+          <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label" for="fullName-input">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="fullName"
+                id="fullName-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="email-input">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="email"
+                id="email-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="cargoBranch-input"
+                >Cargo Branch</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                formControlName="cargoBranch"
+                id="cargoBranch-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="sendDate-input">Send Date</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                formControlName="sendDate"
+                id="sendDate-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="sendCode-input">Send Code</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="sendCode"
+                id="sendCode-input"
+              />
+            </div>
+            <div class="">
+              <button class="btn btn-warning d-block ms-auto">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

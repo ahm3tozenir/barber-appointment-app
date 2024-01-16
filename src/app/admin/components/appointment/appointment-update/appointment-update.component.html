@@ -1,0 +1,91 @@
+<!-- Update Modal example -->
+<div
+  class="modal fade edit-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="mySmallModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="card shadow-none border-0 p-3 pb-0">
+        <div class="card-title">
+          <h4>Update Appointment</h4>
+        </div>
+        <div class="card-body" *ngIf="updateForm">
+          <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label" for="appointment-select"
+                >Appointment</label
+              >
+              <select
+                id="appointment-select"
+                class="form-control"
+                formControlName="appointmentId"
+              >
+                <option
+                  *ngFor="let appointment of appointments"
+                  [value]="appointment.id"
+                >
+                  {{ appointment.fullName }}
+                </option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="fullName-input">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="fullName"
+                id="fullName-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="phoneNumber-input"
+                >Phone Number</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                formControlName="phoneNumber"
+                id="phoneNumber-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="email-input">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="email"
+                id="email-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="startDate-input">Start Date</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                formControlName="startDate"
+                id="startDate-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="endDate-input">End Date</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                formControlName="endDate"
+                id="endDate-input"
+              />
+            </div>
+            <div class="">
+              <button class="btn btn-warning d-block ms-auto">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
